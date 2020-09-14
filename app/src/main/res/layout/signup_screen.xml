@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signin"
+    tools:context=".Login_Signup.SignupScreen">
+
+    <ImageView
+        android:id="@+id/app_name_image"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="79dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sevi" />
+    <LinearLayout
+        android:id="@+id/signup_form"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_image">
+
+        <EditText
+            android:id="@+id/signup_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#fff"
+            android:hint="@string/firstname"
+            android:inputType="textPersonName"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/signup_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:hint="@string/lastname"
+            android:inputType="textPersonName"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/signup_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/signup_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/signup_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/signup_confrm_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="38dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signup_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/dish"
+        android:backgroundTintMode="add"
+        android:text="Next"
+        android:textSize="24sp"
+        android:onClick="callSignupScreen2"
+        android:transitionName="transition_login"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintStart_toEndOf="@+id/signin_login_button"
+        app:layout_constraintTop_toBottomOf="@+id/signup_form"
+        app:layout_constraintVertical_bias="0.968" />
+
+
+    <Button
+        android:id="@+id/signin_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="56dp"
+        android:background="@color/white"
+        android:onClick="callLoginScreen"
+        android:text="Log In?"
+        android:textColor="#F207427C"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_food"
+        app:layout_constraintStart_toStartOf="@+id/bg_food" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/signup_link"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:clickable="true"-->
+    <!--android:focusable="true"-->
+    <!--android:text="Sign up?"-->
+    <!--android:textAlignment="center"-->
+    <!--android:textColor="#F207427C"-->
+    <!--android:textSize="20sp"-->
+    <!--android:gravity="center_horizontal" />-->
+
+    <RelativeLayout
+        android:id="@+id/bg_food"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="235dp">
+
+        <ImageView
+            android:id="@+id/bg_drink_image"
+            android:layout_width="89dp"
+            android:layout_height="74dp"
+            android:layout_marginLeft="-15dp"
+            android:rotation="30"
+            app:srcCompat="@drawable/drinkw" />
+
+        <ImageView
+            android:id="@+id/bg_burger_image"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="20dp"
+            android:rotation="-35"
+            app:srcCompat="@drawable/burger_white" />
+
+        <ImageView
+            android:id="@+id/bg_pizza_image"
+            android:layout_width="67dp"
+            android:layout_height="73dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="330dp"
+            android:layout_marginEnd="-20dp"
+            android:layout_marginRight="-3dp"
+            app:srcCompat="@drawable/pizza" />
+
+        <ImageView
+            android:id="@+id/bg_meal_image"
+            android:layout_width="112dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="540dp"
+            app:srcCompat="@drawable/fastfood" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Sevi</string>
+
+    <!--form details-->
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="dob">Date of Birth</string>
+    <string name="phone">Phone No.</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="forget_password">Forget Password?</string>
+
+
+    <!--OtpVerifiactiob-->
+    <string name="text1">You Will be Received One Time Password on Your Mobile Number</string>
+    <string name="text2">Enter the OTP</string>
+
+    <!--menu-->
+    <string name="my_account">My Account</string>
+    <string name="my_orders">My Orders</string>
+    <string name="feedback">Feedback</string>
+    <string name="contact_us">Contact Us</string>
+</resources>

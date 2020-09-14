@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_login_page"
+    tools:context=".Login_Signup.LoginScreen">
+
+    <ImageView
+        android:id="@+id/app_name_image"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="79dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sevi" />
+
+    <LinearLayout
+        android:id="@+id/signup_form"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_image">
+
+        <EditText
+            android:id="@+id/signup_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#fff"
+            android:hint="Phone no"
+            android:inputType="phone"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/signup_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="34dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="#FCFCFC"
+            android:textColorHint="#DDDDDD"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/login_forget_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="12dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="40dp"
+            android:background="#00000000"
+            android:text="@string/forget_password"
+            android:textColor="@color/white" />
+
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/spoon1"-->
+        <!--android:layout_width="176dp"-->
+        <!--android:layout_height="168dp"-->
+        <!--android:layout_marginLeft="89dp"-->
+        <!--android:layout_marginTop="33dp"-->
+        <!--android:layout_weight="1"-->
+        <!--app:srcCompat="@drawable/spoon" />-->
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/imageButton"-->
+        <!--android:layout_width="216dp"-->
+        <!--android:layout_height="205dp"-->
+        <!--android:layout_marginLeft="157dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:background="@null"-->
+        <!--android:contentDescription=""-->
+        <!--android:scaleType="fitCenter"-->
+        <!--app:srcCompat="@drawable/dish_white"-->
+        <!--tools:ignore="VectorDrawableCompat"-->
+        <!--tools:layout_editor_absoluteX="192dp"-->
+        <!--tools:layout_editor_absoluteY="406dp" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textView2"-->
+        <!--android:layout_width="152dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignStart="@+id/imageButton"-->
+        <!--android:layout_alignLeft="@id/imageButton"-->
+        <!--android:layout_alignEnd="@+id/imageButton"-->
+        <!--android:layout_alignRight="@id/imageButton"-->
+        <!--android:layout_marginStart="62dp"-->
+        <!--android:layout_marginLeft="62dp"-->
+        <!--android:layout_marginTop="94dp"-->
+        <!--android:layout_marginEnd="2dp"-->
+        <!--android:layout_marginRight="2dp"-->
+        <!--android:text="Login"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="36sp" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/spoon2"-->
+        <!--android:layout_width="176dp"-->
+        <!--android:layout_height="168dp"-->
+        <!--android:layout_marginLeft="322dp"-->
+        <!--android:layout_marginTop="33dp"-->
+        <!--android:layout_weight="1"-->
+        <!--app:srcCompat="@drawable/spoon" />-->
+        <!--</RelativeLayout>-->
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signup_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/dish"
+        android:backgroundTintMode="add"
+        android:text="Login"
+        android:onClick="callHomeScreen"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/bg_food"
+        android:transitionName="transition_login"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="371dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/sign_google_button"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/google_signin" />
+
+        <Button
+            android:id="@+id/signin_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:onClick="callSignupScreen"
+            android:background="@color/white"
+            android:text="Sign up?"
+            android:textColor="#F207427C" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/signup_link"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:clickable="true"-->
+        <!--android:focusable="true"-->
+        <!--android:text="Sign up?"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="#F207427C"-->
+        <!--android:textSize="20sp"-->
+        <!--android:gravity="center_horizontal" />-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bg_food"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="709dp">
+
+        <ImageView
+            android:id="@+id/bg_drink_image"
+            android:layout_width="89dp"
+            android:layout_height="74dp"
+            android:layout_marginLeft="-15dp"
+            android:rotation="30"
+            app:srcCompat="@drawable/drinkw" />
+
+        <ImageView
+            android:id="@+id/bg_burger_image"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="20dp"
+            android:rotation="-35"
+            app:srcCompat="@drawable/burger_white" />
+
+        <ImageView
+            android:id="@+id/bg_pizza_image"
+            android:layout_width="67dp"
+            android:layout_height="73dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="330dp"
+            android:layout_marginEnd="-20dp"
+            android:layout_marginRight="-3dp"
+            app:srcCompat="@drawable/pizza" />
+
+        <ImageView
+            android:id="@+id/bg_meal_image"
+            android:layout_width="112dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="350dp"
+            app:srcCompat="@drawable/fastfood" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

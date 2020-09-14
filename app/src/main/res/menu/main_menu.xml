@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/myorder"
+            android:icon="@drawable/ic_myorder"
+            android:title="My Order"
+            />
+        <item
+            android:id="@+id/notification"
+            android:icon="@drawable/ic_notification"
+            android:title="Notification"
+            />
+        <item
+            android:id="@+id/feedback"
+            android:title="feedback"
+            android:icon="@drawable/ic_feedback"
+            />
+        <item
+            android:id="@+id/About"
+            android:title="About Us"
+            android:icon="@drawable/ic_contact_support_"
+            />
+        <item
+            android:id="@+id/share"
+            android:title="Share"
+            android:icon="@drawable/ic_share"
+            />
+
+    </group>
+
+    <item android:title="Contact Us">
+        <menu>
+
+            <item
+                android:title="Phone Num"
+                android:icon="@drawable/ic_phonenum"
+                />
+            <item
+                android:title="E-mail"
+                android:icon="@drawable/ic_email"
+                />
+
+        </menu>
+
+    </item>
+
+
+</menu>
