@@ -207,7 +207,8 @@
             android:layout_height="74dp"
             android:layout_marginLeft="-15dp"
             android:rotation="30"
-            app:srcCompat="@drawable/drinkw" />
+            app:srcCompat="@drawable/ic_toast"
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/bg_burger_image"
@@ -219,7 +220,8 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="20dp"
             android:rotation="-35"
-            app:srcCompat="@drawable/burger_white" />
+            app:srcCompat="@drawable/ic_burger"
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/bg_pizza_image"
@@ -230,14 +232,16 @@
             android:layout_marginTop="330dp"
             android:layout_marginEnd="-20dp"
             android:layout_marginRight="-3dp"
-            app:srcCompat="@drawable/pizza" />
+            app:srcCompat="@drawable/ic_pizza"
+            tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/bg_meal_image"
             android:layout_width="112dp"
             android:layout_height="92dp"
             android:layout_marginTop="350dp"
-            app:srcCompat="@drawable/fastfood" />
+            app:srcCompat="@drawable/ic_fries"
+            tools:ignore="VectorDrawableCompat" />
 
     </RelativeLayout>
 

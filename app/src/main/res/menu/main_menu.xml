@@ -7,11 +7,7 @@
             android:icon="@drawable/ic_myorder"
             android:title="My Order"
             />
-        <item
-            android:id="@+id/notification"
-            android:icon="@drawable/ic_notification"
-            android:title="Notification"
-            />
+
         <item
             android:id="@+id/feedback"
             android:title="feedback"
@@ -24,7 +20,7 @@
             />
         <item
             android:id="@+id/share"
-            android:title="Share"
+            android:title="LogOut"
             android:icon="@drawable/ic_share"
             />
 
