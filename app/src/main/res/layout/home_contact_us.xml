@@ -16,9 +16,10 @@
         android:textColor="@color/colortext"
         android:textSize="30dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/address_image"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText,MissingConstraints,SpUsage"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="50dp" />
+        tools:layout_editor_absoluteX="106dp" />
 
     <TextView
         android:layout_width="150dp"
@@ -64,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_phone_black_18dp"
+        app:srcCompat="@drawable/ic_phonenum"
         android:contentDescription="TODO"
         tools:ignore="ContentDescription,HardcodedText,VectorDrawableCompat" />
 
@@ -112,7 +113,8 @@
         android:id="@+id/button3"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/baseline_keyboard_backspace_black_18dp"
+        android:background="@drawable/ic_arrow_back"
+        android:layout_marginTop="10dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
         tools:ignore="MissingConstraints" />
