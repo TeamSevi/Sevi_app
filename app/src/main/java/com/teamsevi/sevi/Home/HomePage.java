@@ -12,15 +12,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.teamsevi.sevi.R;
+import com.teamsevi.sevi.Scan_Order.ScanOrder;
 
-public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+ public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerlayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    Button scnbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         drawerlayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+        scnbtn=findViewById(R.id.scn_btn);
 
         setSupportActionBar(toolbar);
         Menu menu = navigationView.getMenu();
@@ -37,6 +41,14 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         drawerlayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        scnbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomePage.this,ScanOrder.class);
+                startActivity(intent);
+            }
+        });
 
     }
      public  void onBackPressed() {
