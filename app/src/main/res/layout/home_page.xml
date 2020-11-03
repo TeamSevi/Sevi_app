@@ -43,19 +43,7 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/app_name_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/sevi" />
-            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,6 +51,7 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/scn_btn"
                     android:layout_width="132dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
