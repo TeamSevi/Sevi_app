@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawable_menu"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:gravity="bottom">
+    android:gravity="bottom"
+    tools:ignore="UseCompoundDrawables"
+    >
 
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="30dp"
 
-        android:src="@drawable/ic_android" />
+        android:src="@drawable/ic_android"
+        android:layout_marginStart="30dp" />
     <TextView
+        android:id="@+id/userp"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:text="Usename"
+        android:text="Mr_mkm"
         android:layout_marginLeft="30dp"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_marginStart="30dp" />
 
 
 </LinearLayout>

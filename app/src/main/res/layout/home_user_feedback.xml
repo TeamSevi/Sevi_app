@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/windowBackground"
     tools:context=".Home.UserFeedback">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Feedback"
+        android:textColor="@color/colortext"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="40dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <RadioGroup
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        tools:ignore="MissingConstraints,UselessLeaf" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Only Satiesfied"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colortext"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="136dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colortext"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="201dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exellent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colortext"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="266dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Outstanding"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colortext"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="331dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:text="Rate Us ?"
+        android:textColor="@color/colortext"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="433dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1"
+        android:progressTint="@color/coloricon"
+        android:backgroundTint="#000000"
+
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="512dp"
+        tools:ignore="MissingConstraints"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textColor="@color/colortext"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="601dp"
+        tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/baseline_keyboard_backspace_black_18dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
