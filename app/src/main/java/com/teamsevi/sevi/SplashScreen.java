@@ -10,6 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.teamsevi.sevi.Database.SessionManager;
+import com.teamsevi.sevi.Home.HomePage;
 import com.teamsevi.sevi.Login_Signup.LoginScreen;
 
 public class SplashScreen extends AppCompatActivity {
@@ -21,6 +23,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_screen);
+        SessionManager sessionManager = new SessionManager(this);
 
         //Hooks
         splashBg = findViewById(R.id.splash_bg);
@@ -31,8 +34,14 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getApplicationContext(), LoginScreen.class);
-                startActivity(intent);
+                SessionManager sessionManager = new SessionManager(SplashScreen.this);
+                if(sessionManager.checkLogin()){
+                    Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(getApplicationContext(), LoginScreen.class);
+                    startActivity(intent);
+                }
                 finish();
             }
         },SPLASH_TIMER);

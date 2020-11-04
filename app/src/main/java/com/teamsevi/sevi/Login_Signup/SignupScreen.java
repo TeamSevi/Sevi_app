@@ -1,5 +1,6 @@
 package com.teamsevi.sevi.Login_Signup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.teamsevi.sevi.Home.HomePage;
 import com.teamsevi.sevi.R;
 
@@ -122,21 +128,40 @@ public class SignupScreen extends AppCompatActivity {
         }
     }
     public void callSignupOTP(View view){
-        String _fname = firstname.getText().toString();
-        String _lname = lastname.getText().toString();
-        String _phone = phoneno.getText().toString();
-        String _email = email.getText().toString();
-        String _pass = password.getText().toString();
+        final String _fname = firstname.getText().toString();
+        final String _lname = lastname.getText().toString();
+        final String _phone = phoneno.getText().toString();
+        final String _email = email.getText().toString();
+        final String _pass = password.getText().toString();
         if(!validatefirstname() | !validatelastname() | !validatephone() | !validateemail() | !validatepass() | !validateconfpass() ){
             return;
         }
-        Intent intent = new Intent(getApplicationContext(), Signup_OTP.class);
-        intent.putExtra("firstname", _fname);
-        intent.putExtra("lastname", _lname);
-        intent.putExtra("phone", _phone);
-        intent.putExtra("email", _email);
-        intent.putExtra("password", _pass);
-        startActivity(intent);
+        Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phoneno").equalTo(_phone);
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    phoneno.setError(null);
+
+                    Toast.makeText(SignupScreen.this, "User Already exist", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(getApplicationContext(), Signup_OTP.class);
+                    intent.putExtra("firstname", _fname);
+                    intent.putExtra("lastname", _lname);
+                    intent.putExtra("phone", _phone);
+                    intent.putExtra("email", _email);
+                    intent.putExtra("password", _pass);
+                    startActivity(intent);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(SignupScreen.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 //
 ////        ;
 ////        if(_fname.isEmpty() || _lname.isEmpty() || _phone.isEmpty() || _email.isEmpty() || _pass.isEmpty() || _cpass.isEmpty()){

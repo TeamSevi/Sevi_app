@@ -18,7 +18,7 @@
             />
 
         <item
-            android:id="@+id/Cotact"
+            android:id="@+id/Contact"
             android:title="Contact Us"
             android:icon="@drawable/ic_phonenum"
             />
