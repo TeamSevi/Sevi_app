@@ -3,6 +3,7 @@ package com.teamsevi.sevi.Login_Signup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,7 +57,7 @@ public class Signup_OTP extends AppCompatActivity {
                 phoneno,
                 60,
                 TimeUnit.SECONDS,
-                TaskExecutors.MAIN_THREAD,
+                (Activity) TaskExecutors.MAIN_THREAD,
                 mCallbacks);
     }
 

@@ -2,15 +2,20 @@ package com.teamsevi.sevi.Scan_Order;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.util.Log;
-
+import android.content.SharedPreferences;
+import com.teamsevi.sevi.Database.SessionManager;
 import com.teamsevi.sevi.Home.HomePage;
+import com.teamsevi.sevi.Login_Signup.LoginScreen;
 import com.teamsevi.sevi.R;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
+import com.teamsevi.sevi.Hotel_Menu.Hotel1;
 
 
 public class ScanOrder extends AppCompatActivity implements ZBarScannerView.ResultHandler {
     private ZBarScannerView mScannerView;
+    SharedPreferences pref;
     public String scnres;
     //camera permission is needed.
     @Override
@@ -37,7 +42,9 @@ public class ScanOrder extends AppCompatActivity implements ZBarScannerView.Resu
         Log.v("uuuu", result.getBarcodeFormat().getName());
 
         scnres=result.getContents();
-
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("scan_result",scnres);
+        editor.commit();
         //hotel_list.tvresult.setText(result.getContents());
         onBackPressed();
         // If you would like to resume scanning, call this method below:

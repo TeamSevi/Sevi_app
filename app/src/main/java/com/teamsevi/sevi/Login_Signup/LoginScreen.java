@@ -74,7 +74,7 @@ public class LoginScreen extends AppCompatActivity {
             return;
         }
         //database
-        Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phoneno").equalTo(_phone);
+        Query checkUser = FirebaseDatabase.getInstance().getReference("App/users").orderByChild("phoneno").equalTo(_phone);
 
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
