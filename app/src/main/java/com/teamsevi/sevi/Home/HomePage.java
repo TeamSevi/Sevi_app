@@ -29,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.teamsevi.sevi.Database.SessionManager;
+import com.teamsevi.sevi.Hotel_Menu.Hotel1;
 import com.teamsevi.sevi.Login_Signup.LoginScreen;
 import com.teamsevi.sevi.R;
 import com.teamsevi.sevi.Scan_Order.ScanOrder;
@@ -86,7 +87,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
         scnbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HomePage.this,ScanOrder.class);
+                Intent intent=new Intent(HomePage.this, Hotel1.class);
                 startActivity(intent);
             }
         });

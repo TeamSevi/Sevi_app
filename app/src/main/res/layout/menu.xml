@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/c"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="4dp"
+    app:cardUseCompatPadding="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/i"
+            android:src="@mipmap/ic_launcher"/>
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/t1"
+            android:text="header"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_toRightOf="@id/i"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/t2"
+            android:text="dec"
+            android:textSize="20dp"
+            android:layout_toRightOf="@id/i"
+            android:layout_below="@id/t1"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/t3"
+            android:text="price"
+            android:textSize="20dp"
+            android:layout_toRightOf="@id/i"
+            android:layout_below="@id/t2"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/i1"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/veg"
+            android:layout_alignParentRight="true" />
+
+       <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+           android:layout_width="80dp"
+           android:id="@+id/d"
+           android:layout_alignParentRight="true"
+           android:layout_below="@id/i1"
+           android:layout_height="30dp"
+           android:gravity="center"
+           app:initialNumber="1"
+           app:finalNumber="10"
+           app:textSize="10sp"
+           app:textColor="@color/black"
+           app:backGroundColor="@color/colorPrimary"
+           >
+
+       </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
