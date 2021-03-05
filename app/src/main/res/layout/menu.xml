@@ -6,8 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="5dp"
     android:elevation="4dp"
-    app:cardUseCompatPadding="true"
-    >
+    app:cardUseCompatPadding="true">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,8 +62,7 @@
            app:finalNumber="10"
            app:textSize="10sp"
            app:textColor="@color/black"
-           app:backGroundColor="@color/colorPrimary"
-           >
+           app:backGroundColor="@color/colorPrimary">
 
        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
     </RelativeLayout>
