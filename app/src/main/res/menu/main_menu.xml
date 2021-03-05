@@ -4,6 +4,7 @@
         <item
             android:id="@+id/profile"
             android:title="Profile"
+            android:icon="@drawable/ic_profile"
             />
         <item
             android:id="@+id/myorder"
@@ -25,6 +26,7 @@
         <item
             android:id="@+id/logout"
             android:title="LogOut"
+            android:icon="@drawable/ic_logout"
 
             />
 
