@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:layout_height="match_parent"
     android:id="@+id/splash_screen_bg"
     tools:context=".SplashScreen">
@@ -12,10 +12,26 @@
         android:id="@+id/splash_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_splash"
+        android:src="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/splash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lithospro_regular"
+        android:gravity="center"
+        android:text="sevi"
+        android:textColor="#EC4E27"
+        android:textSize="65sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

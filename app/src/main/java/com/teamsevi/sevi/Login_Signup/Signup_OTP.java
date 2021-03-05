@@ -123,7 +123,7 @@ public class Signup_OTP extends AppCompatActivity {
 
     private void storeUserData() {
         FirebaseDatabase rootnode = FirebaseDatabase.getInstance();
-        DatabaseReference reference = rootnode.getReference("Users");
+        DatabaseReference reference = rootnode.getReference("App/users");
 
         UserHelperClass addNewUser = new UserHelperClass(firstname,lastname,phoneno,email,password);
 
@@ -138,5 +138,10 @@ public class Signup_OTP extends AppCompatActivity {
             }
 
 
+    }
+
+    public void callSignupScreen(View view) {
+        Intent intent = new Intent(getApplicationContext(), SignupScreen.class);
+        startActivity(intent);
     }
 }

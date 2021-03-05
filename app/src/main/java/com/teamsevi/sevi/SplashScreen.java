@@ -9,14 +9,16 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.teamsevi.sevi.Database.SessionManager;
 import com.teamsevi.sevi.Home.HomePage;
 import com.teamsevi.sevi.Login_Signup.LoginScreen;
 
 public class SplashScreen extends AppCompatActivity {
-    private  static int SPLASH_TIMER =2000;
+    private  static int SPLASH_TIMER =1400;
     ImageView splashBg;
+    TextView splashtext;
     Animation splashAnim;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +28,12 @@ public class SplashScreen extends AppCompatActivity {
         SessionManager sessionManager = new SessionManager(this);
 
         //Hooks
+        splashtext = findViewById(R.id.splash_text);
         splashBg = findViewById(R.id.splash_bg);
         splashAnim = AnimationUtils.loadAnimation(this,R.anim.splash_anim);
 
         splashBg.setAnimation(splashAnim);
+        splashtext.setAnimation(splashAnim);
 
         new Handler().postDelayed(new Runnable() {
             @Override

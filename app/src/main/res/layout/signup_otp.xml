@@ -1,72 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/login_sign_back"
     tools:context=".Login_Signup.Signup_OTP">
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/otp"
-        ></ImageView>
-
-    <TextView
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
-        android:padding="20dp"
-        android:textSize="23sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="@string/text1"
-        >
-    </TextView>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:onClick="callSignupScreen">
+        </ImageView>
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="200dp"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="30dp"
-        android:textSize="25sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="@string/text2"></TextView>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/otp">
+        </ImageView>
 
-    <EditText
-        android:id="@+id/otp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:inputType="numberDecimal"
-        android:layout_gravity="center"
-        android:textSize="22sp"
-        android:background="@color/colorAccent">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:padding="20dp"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="@string/text1">
+        </TextView>
 
-    </EditText>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/text2">
+        </TextView>
 
-    <Button
-        android:id="@+id/otp_submit"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Submit"
-        android:onClick="callHomeScreen"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        ></Button>
+        <com.chaos.view.PinView
+                android:id="@+id/otp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:itemCount="6"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+            android:gravity="center"
+                style="@style/PinWidget.PinView"
+                android:inputType="number"
+                android:cursorVisible="true"
+                app:cursorColor="@color/black"
+                app:hideLineWhenFilled="true"
+                app:itemRadius="5dp"
+                app:lineColor="@color/black"
+                android:itemBackground="@color/lightwhite">
+            </com.chaos.view.PinView>
+        <Button
+                android:id="@+id/otp_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="callHomeScreen"
+                android:text="Submit"
+                android:background="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp">
+
+            </Button>
+
+<!--        <EditText-->
+<!--            android:id="@+id/otp"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:textSize="22sp"-->
+<!--            android:background="@color/colorAccent">-->
+
+<!--        </EditText>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/otp_submit"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="Submit"-->
+<!--            android:onClick="callHomeScreen"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="20dp"-->
+<!--            ></Button>-->
+    </LinearLayout>
 
 
-</LinearLayout>
+
+
+
+
+
+</ScrollView>
 
 <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
     <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->

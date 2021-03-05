@@ -39,7 +39,7 @@ public class SignupScreen extends AppCompatActivity {
         phoneno = findViewById(R.id.signup_phone);
         email = findViewById(R.id.signup_email);
         password = findViewById(R.id.signup_pass);
-        confirmpass = findViewById(R.id.signup_confrm_pass);
+        confirmpass = findViewById(R.id.signup_confirm_pass);
         next = findViewById(R.id.signup_next_button);
 
     }

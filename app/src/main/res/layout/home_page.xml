@@ -9,7 +9,7 @@
     tools:openDrawer="start"
     tools:context=".Home.HomePage">
     <com.google.android.material.navigation.NavigationView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
         android:background="@color/white"
@@ -19,81 +19,209 @@
 
     </com.google.android.material.navigation.NavigationView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/windowBackground"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/windowBackground"-->
+<!--        android:orientation="vertical">-->
 
 
 
-        <ScrollView
+<!--        <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/white"-->
+<!--                android:minHeight="?attr/actionBarSize"-->
+<!--                android:theme="?attr/actionBarTheme" />-->
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/scn_btn"-->
+<!--                    android:layout_width="132dp"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="100dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:text="Scan and order"-->
+<!--                    tools:ignore="HardcodedText" />-->
+
+
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="50dp"-->
+<!--                    android:paddingEnd="25dp"-->
+<!--                    android:paddingRight="25dp"-->
+<!--                    android:text="  see the menu"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    tools:ignore="HardcodedText,RtlSymmetry" />-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:paddingEnd="20dp"-->
+<!--                    android:layout_marginTop="50dp"-->
+<!--                    android:text="  hotel near me"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:paddingRight="200dp"-->
+<!--                    tools:ignore="HardcodedText,RtlSymmetry" />-->
+
+<!--            </LinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+
+<!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:padding="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:src="@drawable/ic_profile" />&ndash;&gt;-->
+
+<!--    </LinearLayout>-->
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@drawable/shadow_top" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="?attr/actionBarSize"
                 android:background="@color/white"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme" />
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/ToolBarStyle"
+                android:layout_gravity="center_horizontal"
+                android:contentInsetStart="0dp"
+                app:contentInsetStart="0dp"
+                android:contentInsetLeft="0dp"
+                app:contentInsetLeft="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:weightSum="5">
+
+
+<!--                                <ImageButton-->
+<!--                                    android:id="@+id/btnMenu"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:layout_weight="1"-->
+<!--                                    android:src="@drawable/ic_menu_icon"-->
+<!--                                    android:tint="@color/colorPrimary"-->
+<!--                                    android:background="?android:attr/selectableItemBackground"/>-->
+
+                                <ImageButton
+                                    android:id="@+id/btnBerita"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_notification"
+                                    android:tint="@color/colorPrimary"
+                                    android:background="?android:attr/selectableItemBackground"/>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"/>
+
+
+                                <ImageButton
+                                    android:id="@+id/btnFavorite"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_feedback"
+                                    android:tint="@color/colorPrimary"
+                                    android:background="?android:attr/selectableItemBackground"/>
+
+                                <ImageButton
+                                    android:id="@+id/btnMap"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/ic_map_marker"
+                                    android:tint="@color/colorPrimary"
+                                    android:background="?android:attr/selectableItemBackground"/>
+
+                            </LinearLayout>
+
+                        </androidx.appcompat.widget.Toolbar>
+
+                    </com.google.android.material.appbar.AppBarLayout>
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:elevation="30dp"
+                        android:translationZ="30dp">
+                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/scan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:scaleType="center"
+                            app:backgroundTint="?attr/colorPrimary"
+                            app:borderWidth="0dp"
+                            app:elevation="10dp"
+                            app:fabSize="normal"
+                            app:srcCompat="@drawable/ic_qrcode"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-                <Button
-                    android:id="@+id/scn_btn"
-                    android:layout_width="132dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="100dp"
-                    android:textColor="@color/black"
-                    android:text="Scan and order"
-                    tools:ignore="HardcodedText" />
+                        <com.skyfishjy.library.RippleBackground
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/rippleBackground"
+                            app:rb_color="@color/colorPrimary"
+                            app:rb_radius="22dp"
+                            app:rb_rippleAmount="3"
+                            app:rb_duration="3000"
+                            app:rb_scale="3"
+                            android:layout_gravity="center"
+                            android:gravity="center">
 
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="50dp"
-                    android:paddingEnd="25dp"
-                    android:paddingRight="25dp"
-                    android:text="  see the menu"
-                    android:textColor="@color/black"
-                    tools:ignore="HardcodedText,RtlSymmetry" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:paddingEnd="20dp"
-                    android:layout_marginTop="50dp"
-                    android:text="  hotel near me"
-                    android:textColor="@color/black"
-                    android:paddingRight="200dp"
-                    tools:ignore="HardcodedText,RtlSymmetry" />
 
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </ScrollView>
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="5dp"
-            android:src="@drawable/ic_profile" />
-
-    </LinearLayout>
-
-</androidx.drawerlayout.widget.DrawerLayout>
+                        </com.skyfishjy.library.RippleBackground>
+                    </FrameLayout>
+                </RelativeLayout>
+            </androidx.drawerlayout.widget.DrawerLayout>

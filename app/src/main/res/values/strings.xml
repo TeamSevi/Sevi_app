@@ -9,7 +9,7 @@
     <string name="dob">Date of Birth</string>
     <string name="phone">Phone No.</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
+    <string name="login">Log In</string>
     <string name="Signup">Sign Up</string>
     <string name="forget_password">Forget Password?</string>
 
@@ -24,10 +24,10 @@
     <string name="feedback">Feedback</string>
     <string name="contact_us">Contact Us</string>
     <string name="mr_mkm">Mr_mkm</string>
-    <string name="F_name">First Name</string>
-    <string name="l_name">Last Name</string>
-    <string name="mobile_no">Mobile No</string>
-    <string name="U_email">Email</string>
+    <string name="f_name">First Name :</string>
+    <string name="l_name">Last Name :</string>
+    <string name="mobile_no">Mobile No :</string>
+    <string name="U_email">Email :</string>
     <string name="n_d_o">Open navigation drawer</string>
     <string name="n_d_c">Close navigation drawer </string>
 </resources>
