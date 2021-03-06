@@ -1,10 +1,21 @@
 package com.teamsevi.sevi.Scan_Order;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.se.omapi.Session;
 import android.util.Log;
 import android.content.SharedPreferences;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.teamsevi.sevi.Database.SessionManager;
 import com.teamsevi.sevi.Home.HomePage;
 import com.teamsevi.sevi.Login_Signup.LoginScreen;
@@ -42,11 +53,41 @@ public class ScanOrder extends AppCompatActivity implements ZBarScannerView.Resu
         Log.v("uuuu", result.getBarcodeFormat().getName());
 
         scnres=result.getContents();
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("scan_result",scnres);
-        editor.commit();
+//        SharedPreferences.Editor editor = pref.edit();
+//        editor.putString("scan_result",scnres);
+//        editor.commit();
         //hotel_list.tvresult.setText(result.getContents());
         onBackPressed();
+        Query checkUser = FirebaseDatabase.getInstance().getReference("Hotel").orderByChild("QRstring").equalTo(scnres);
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    String hotelid = "";
+                    for (DataSnapshot snap: dataSnapshot.getChildren()){
+                        hotelid = snap.getKey();
+                    }
+
+
+                        //creaate a session
+                        SharedPreferences sharedpreferences = getSharedPreferences("HotelSession", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putString("hotelid", hotelid);
+                        editor.commit();
+                        startActivity(new Intent(getApplicationContext(), Hotel1.class));
+                }
+                else {
+                    Toast.makeText(ScanOrder.this, "Wrong QR code!", Toast.LENGTH_SHORT).show();
+                    mScannerView.resumeCameraPreview(ScanOrder.this);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ScanOrder.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
         // If you would like to resume scanning, call this method below:
         //mScannerView.resumeCameraPreview(this);
     }

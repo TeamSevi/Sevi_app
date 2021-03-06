@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.skyfishjy.library.RippleBackground;
 import com.teamsevi.sevi.Database.SessionManager;
 import com.teamsevi.sevi.Hotel_Menu.Hotel1;
 import com.teamsevi.sevi.Login_Signup.LoginScreen;
@@ -66,11 +67,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }
 
+        final RippleBackground rippleBackground=(RippleBackground) findViewById(R.id.rippleBackground);
+        rippleBackground.startRippleAnimation();
+
         SessionManager sessionManager = new SessionManager(this);
         HashMap usersDetails = sessionManager.getUserDetailFromSession();
         String firstname = (String) usersDetails.get(SessionManager.KEY_FIRSTNAME);
         String lastname = (String) usersDetails.get(SessionManager.KEY_LASTNAME);
-        Toast.makeText(this, "Welcome "+firstname, Toast.LENGTH_SHORT).show();
         navigationView.setNavigationItemSelectedListener(this);
         TextView name = (TextView) navigationView.getHeaderView(0).findViewById(R.id.name);
         CircleImageView imagePofile = (CircleImageView) navigationView.getHeaderView(0).findViewById(R.id.image_profile);
@@ -87,7 +90,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
         scnbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HomePage.this, Hotel1.class);
+                Intent intent=new Intent(HomePage.this, ScanOrder.class);
                 startActivity(intent);
             }
         });

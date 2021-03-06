@@ -85,7 +85,7 @@ public class UserProfile extends AppCompatActivity {
         //first_name.setText(firstname);
         //last_name.setText(lastname);
         user_phone.setText(phone);
-        //user_mail.setText(email);
+        user_mail.setText(email);
         name.setText(firstname + " " + lastname);
         // get the Firebase  storage reference
         storage = FirebaseStorage.getInstance();
