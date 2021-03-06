@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Scan_Order.ThanksScreen"></activity>
+        <activity android:name=".Table"></activity>
+        <activity android:name=".Scan_Order.ThanksScreen" />
         <activity android:name=".Scan_Order.FinalConfirm" />
         <activity android:name=".Scan_Order.ConfirmHold" />
         <activity android:name=".Scan_Order.ScanMenu" />
