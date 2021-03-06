@@ -3,6 +3,7 @@ package com.teamsevi.sevi.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -14,13 +15,26 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Adapter_category extends FirebaseRecyclerAdapter<Model_category, Adapter_category.holder_category> {
-
+int i =-1;
     public Adapter_category(@NonNull FirebaseRecyclerOptions<Model_category> options1) {
         super(options1);
     }
 
     protected void onBindViewHolder(@NonNull holder_category holder1, int position, @NonNull Model_category model1) {
         holder1.t.setText(model1.getItemcategory());
+        holder1.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                i = position;
+                notifyDataSetChanged();
+            }
+        });
+        if(i == position){
+            holder1.linearLayout.setBackgroundResource(R.drawable.select);
+        }
+        else {
+            holder1.linearLayout.setBackgroundResource(R.drawable.bg);
+        }
     }
 
     @NonNull
@@ -32,9 +46,11 @@ public class Adapter_category extends FirebaseRecyclerAdapter<Model_category, Ad
 
     class holder_category extends RecyclerView.ViewHolder{
         TextView t;
+        LinearLayout linearLayout;
         public holder_category(@NonNull View itemView) {
             super(itemView);
             t =(TextView)itemView.findViewById(R.id.textView5);
+            linearLayout = itemView.findViewById(R.id.l);
         }
     }
 }

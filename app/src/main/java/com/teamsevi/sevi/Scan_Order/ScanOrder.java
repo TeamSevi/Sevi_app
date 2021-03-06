@@ -76,7 +76,7 @@ public class ScanOrder extends AppCompatActivity implements ZBarScannerView.Resu
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("hotelid", hotelid);
                         editor.commit();
-                        startActivity(new Intent(getApplicationContext(), Table.class));
+                        startActivity(new Intent(getApplicationContext(), Hotel1.class));
                 }
                 else {
                     Toast.makeText(ScanOrder.this, "Wrong QR code!", Toast.LENGTH_SHORT).show();

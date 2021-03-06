@@ -58,14 +58,17 @@ public class Hotel1 extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
+        adapter1.startListening();
         adapter.startListening();
     }
     @Override
     protected void onStop() {
         super.onStop();
+        adapter1.stopListening();
         adapter.stopListening();
     }
 
