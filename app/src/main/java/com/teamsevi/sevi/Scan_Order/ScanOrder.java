@@ -22,6 +22,7 @@ import com.teamsevi.sevi.Login_Signup.LoginScreen;
 import com.teamsevi.sevi.R;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
 import com.teamsevi.sevi.Hotel_Menu.Hotel1;
+import com.teamsevi.sevi.Table;
 
 
 public class ScanOrder extends AppCompatActivity implements ZBarScannerView.ResultHandler {
@@ -75,7 +76,7 @@ public class ScanOrder extends AppCompatActivity implements ZBarScannerView.Resu
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("hotelid", hotelid);
                         editor.commit();
-                        startActivity(new Intent(getApplicationContext(), Hotel1.class));
+                        startActivity(new Intent(getApplicationContext(), Table.class));
                 }
                 else {
                     Toast.makeText(ScanOrder.this, "Wrong QR code!", Toast.LENGTH_SHORT).show();

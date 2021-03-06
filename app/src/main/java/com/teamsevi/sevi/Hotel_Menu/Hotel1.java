@@ -33,7 +33,7 @@ public class Hotel1 extends AppCompatActivity {
 
         SharedPreferences shared = getSharedPreferences("HotelSession", MODE_PRIVATE);
         String hotelid = shared.getString("hotelid", "");
-        System.out.println(hotelid);
+        //System.out.println(hotelid);
 
         recyclerView = (RecyclerView)findViewById(R.id.rev);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
