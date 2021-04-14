@@ -31,4 +31,5 @@
     <string name="n_d_o">Open navigation drawer</string>
     <string name="n_d_c">Close navigation drawer </string>
     <string name="order"><![CDATA[& Order]]></string>
+    <string name="title_activity_maps">Map</string>
 </resources>

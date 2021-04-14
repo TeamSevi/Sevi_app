@@ -281,7 +281,6 @@ public class UserProfile extends AppCompatActivity {
         }
     }
     public void callHomeScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(), HomePage.class);
-        startActivity(intent);
+        super.onBackPressed();
     }
 }

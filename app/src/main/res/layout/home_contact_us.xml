@@ -1,128 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
     tools:context=".Home.ContactUs">
 
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="210dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:text="GET IN TOUCH"
-        android:textColor="@color/colortext"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/address_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="150dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:text="Sevi Group"
-        android:textColor="@color/colortext"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/phone_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/address_image"
-        tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
+        android:background="@android:color/transparent">
 
-    <ImageView
-        android:id="@+id/address_image"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/phone_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.572"
-        app:srcCompat="@drawable/ic_map_pin"
-        tools:ignore="ContentDescription,VectorDrawableCompat" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/ToolBarStyle">
 
-    <ImageView
-        android:id="@+id/phone_image"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="324dp"
-        android:contentDescription="TODO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_phonenum"
-        tools:ignore="ContentDescription,HardcodedText,VectorDrawableCompat" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
+                <ImageButton
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_left"
+                    android:tint="@color/colorPrimary"
+                    android:onClick="callHomeScreen"/>
 
-        android:id="@+id/textView7"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:text="8155831099"
-        android:textColor="@color/colortext"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/phone_image"
-        app:layout_constraintVertical_bias="0.166"
-        tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical"
+                    android:text="Contact Us"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/email_image"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72"
-        app:srcCompat="@drawable/ic_email"
-        tools:ignore="ContentDescription,VectorDrawableCompat" />
+            </RelativeLayout>
 
-    <TextView
+        </androidx.appcompat.widget.Toolbar>
 
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:text="akshaymakadiya529@gmail.com"
-        android:textColor="@color/colortext"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.47"
-        tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_arrow_back"
-        android:layout_marginTop="10dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/button3">
+
+            <ImageView
+                android:id="@+id/address_image"
+                android:layout_width="290dp"
+                android:layout_height="62dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                app:srcCompat="@drawable/ic_map_pin"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat"
+                tools:layout_editor_absoluteX="75dp"
+                tools:layout_editor_absoluteY="150dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:text="Sevi Group"
+                android:gravity="center"
+                android:textColor="@color/colortext"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,MissingConstraints,SpUsage"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="231dp" />
+
+            <ImageView
+                android:id="@+id/phone_image"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:contentDescription="TODO"
+                android:layout_marginTop="55dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_phonenum"
+                tools:ignore="ContentDescription,HardcodedText,MissingConstraints,VectorDrawableCompat"
+                tools:layout_editor_absoluteX="105dp"
+                tools:layout_editor_absoluteY="340dp" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="ShowDialer"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="+919265554533"
+                android:padding="10dp"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/colorPrimary"
+                tools:layout_editor_absoluteX="141dp"
+                tools:layout_editor_absoluteY="404dp" />
+
+            <ImageView
+                android:id="@+id/email_image"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="55dp"
+                app:srcCompat="@drawable/ic_email"
+                tools:ignore="ContentDescription,VectorDrawableCompat"
+                tools:layout_editor_absoluteX="105dp"
+                tools:layout_editor_absoluteY="506dp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="ComposeEmail"
+                android:layout_gravity="center"
+                android:text="anshumankalathiya@gmail.com"
+                android:padding="10dp"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/colorPrimary"
+                android:textAllCaps="false"
+                tools:layout_editor_absoluteX="72dp"
+                tools:layout_editor_absoluteY="569dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
