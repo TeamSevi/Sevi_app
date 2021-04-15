@@ -59,8 +59,8 @@
            android:layout_below="@id/i1"
            android:layout_height="30dp"
            android:gravity="center"
-           app:initialNumber="1"
-           app:finalNumber="10"
+           app:initialNumber="0"
+           app:finalNumber="100"
            app:textSize="10sp"
            app:textColor="@color/black"
            app:backGroundColor="@color/colorPrimary">

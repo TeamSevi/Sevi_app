@@ -1,14 +1,10 @@
 package com.teamsevi.sevi.Scan_Order;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.se.omapi.Session;
-import android.util.Log;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,13 +12,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.teamsevi.sevi.Database.SessionManager;
-import com.teamsevi.sevi.Home.HomePage;
-import com.teamsevi.sevi.Login_Signup.LoginScreen;
-import com.teamsevi.sevi.R;
-import me.dm7.barcodescanner.zbar.ZBarScannerView;
 import com.teamsevi.sevi.Hotel_Menu.Hotel1;
-import com.teamsevi.sevi.Table;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
 
 public class ScanOrder extends AppCompatActivity implements ZBarScannerView.ResultHandler {
