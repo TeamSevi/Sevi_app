@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "985230084588",
+    "firebase_url": "https://seviapp-30ad7.firebaseio.com",
+    "project_id": "seviapp-30ad7",
+    "storage_bucket": "seviapp-30ad7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985230084588:android:6862d9ff7eec7383bb58c9",
+        "android_client_info": {
+          "package_name": "com.teamsevi.sevi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985230084588-56807nqfe9m43rphkfjc31a5qv2bl5jc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamsevi.sevi",
+            "certificate_hash": "6698cc2539f94720d86a7f909e786015266ee1db"
+          }
+        },
+        {
+          "client_id": "985230084588-vcq77j70em77pb2el3n1v5dmlb54ptmb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamsevi.sevi",
+            "certificate_hash": "7370a89e097240bfa2fd56a5161e2143770db38d"
+          }
+        },
+        {
+          "client_id": "985230084588-8g0c6jjn6dtp1d7qrg2h0aa4bhoh0keu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB1sBDNcjX5vOBrJElsc2i3p4DsLiCm0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985230084588-8g0c6jjn6dtp1d7qrg2h0aa4bhoh0keu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

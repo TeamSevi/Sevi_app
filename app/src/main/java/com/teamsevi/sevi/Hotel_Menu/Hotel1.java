@@ -15,21 +15,29 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.teamsevi.sevi.Adapter.Adapter_category;
 import com.teamsevi.sevi.Adapter.Adapter_menu;
+import com.teamsevi.sevi.Home.HomePage;
 import com.teamsevi.sevi.Model.Model_category;
 import com.teamsevi.sevi.Model.Model_menu;
 import com.teamsevi.sevi.R;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.razorpay.Checkout;
+import com.razorpay.PaymentResultListener;
+
 import static com.teamsevi.sevi.Adapter.Adapter_category.pref;
 import static com.teamsevi.sevi.Adapter.Adapter_category.pref1;
 
-public class Hotel1 extends AppCompatActivity {
+public class Hotel1 extends AppCompatActivity implements PaymentResultListener {
     RecyclerView recyclerView,recyclerView1;
     Adapter_menu adapter;
-    Button button;
+    Button button,btnPlaceOrder;
     ElegantNumberButton elegantNumberButton;
     TextView textView;
     String e;
@@ -42,6 +50,38 @@ public class Hotel1 extends AppCompatActivity {
         setTitle("");
         SharedPreferences shared = getSharedPreferences("HotelSession", MODE_PRIVATE);
         String hotelid = shared.getString("hotelid", "");
+
+        btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
+        String samount = "799";
+
+        int amount = Math.round(Float.parseFloat(samount) * 100);
+
+        btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Checkout checkout = new Checkout();
+                checkout.setKeyID("rzp_test_s85NL1xiku1HwG");
+                checkout.setImage(R.drawable.sevi);
+
+                JSONObject object =  new JSONObject();
+                try {
+                    object.put("name","Sevi");
+                    object.put("description","payment to the Sevi");
+                    object.put("theme.color","#0093DD");
+                    object.put("currency","INR");
+                    object.put("amount",amount);
+                    object.put("prefill.contact","9876543210");
+                    object.put("prefill.email","xyz@gmail.com");
+
+                    checkout.open(Hotel1.this,object);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
        /* SharedPreferences shared1 = getSharedPreferences("CategorySession", MODE_PRIVATE);
         String itemcategory = shared1.getString("itemcategory", "");
         recyclerView1 = (RecyclerView)findViewById(R.id.rev1);
@@ -107,6 +147,25 @@ elegantNumberButton.setOnClickListener(new ElegantNumberButton.OnClickListener()
 //String c = category;
     }
 
+
+    @Override
+    public void onPaymentSuccess(String s) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Payment ID ");
+
+        builder.setMessage(s);
+
+        builder.show();
+    }
+
+    @Override
+    public void onPaymentError(int i, String s) {
+
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+
+    }
 
     @Override
     protected void onStart() {
