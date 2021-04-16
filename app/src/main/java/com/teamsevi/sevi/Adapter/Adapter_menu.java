@@ -28,6 +28,7 @@ public class Adapter_menu extends FirebaseRecyclerAdapter<Model_menu, Adapter_me
         holder.textView.setText(model.getItemname());
         holder.textView1.setText(model.getItemdescription());
         holder.textView2.setText(model.getItemprice());
+
         total = holder.t1.getText().toString();
     }
 
