@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.teamsevi.sevi.Model.Model_menu;
@@ -18,17 +19,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Adapter_menu extends FirebaseRecyclerAdapter<Model_menu, Adapter_menu.holder> {
-
+    private Context context;
     public String total;
-    public Adapter_menu(@NonNull FirebaseRecyclerOptions<Model_menu> options) {
+
+    public Adapter_menu(@NonNull FirebaseRecyclerOptions<Model_menu> options, Context context) {
         super(options);
+        this.context = context;
     }
 
     protected void onBindViewHolder(@NonNull holder holder, int position, @NonNull Model_menu model) {
         holder.textView.setText(model.getItemname());
         holder.textView1.setText(model.getItemdescription());
         holder.textView2.setText(model.getItemprice());
-
+        Glide.with(context).load(model.getItemimage()).into(holder.imageView);
         total = holder.t1.getText().toString();
     }
 

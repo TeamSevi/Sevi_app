@@ -102,7 +102,7 @@ elegantNumberButton.setOnClickListener(new ElegantNumberButton.OnClickListener()
                 new FirebaseRecyclerOptions.Builder<Model_menu>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Hotel").child(hotelid).child("items"), Model_menu.class)
                         .build();
-        adapter = new Adapter_menu(options);
+        adapter = new Adapter_menu(options,this);
         recyclerView.setAdapter(adapter);
 //String c = category;
     }
@@ -151,7 +151,7 @@ elegantNumberButton.setOnClickListener(new ElegantNumberButton.OnClickListener()
                 new FirebaseRecyclerOptions.Builder<Model_menu>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Hotel").child("items").startAt(s).endAt(s+"\uf8ff"), Model_menu.class)
                         .build();
-        adapter = new Adapter_menu(options);
+        adapter = new Adapter_menu(options,this);
         adapter.startListening();
         recyclerView.setAdapter(adapter);
 

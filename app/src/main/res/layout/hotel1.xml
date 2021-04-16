@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:id="@+id/c"
     tools:context=".Hotel_Menu.Hotel1">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,22 +12,23 @@
         android:padding="16dp"
         android:id="@+id/r"
         tools:ignore="MissingConstraints">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rev"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rev"
+            android:layout_width="373dp"
+            android:layout_height="602dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_alignParentBottom="@+id/r"
+        android:layout_alignParentBottom="@+id/c"
         app:cardBackgroundColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/r"
+        app:layout_constraintBottom_toBottomOf="@+id/c"
         tools:ignore="MissingConstraints">
 
         <RelativeLayout
