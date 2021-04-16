@@ -30,7 +30,7 @@ Adapter_Table adapter;
 
         FirebaseRecyclerOptions<Model_Table> options =
                 new FirebaseRecyclerOptions.Builder<Model_Table>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Hotel").child(hotelid).child("tables"), Model_Table.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Hotel").child(hotelid).child("tables").orderByChild("name"), Model_Table.class)
                         .build();
         adapter = new Adapter_Table(options,this);
         recyclerView.setAdapter(adapter);
