@@ -32,7 +32,7 @@ Adapter_Table adapter;
                 new FirebaseRecyclerOptions.Builder<Model_Table>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Hotel").child(hotelid).child("tables"), Model_Table.class)
                         .build();
-        adapter = new Adapter_Table(options);
+        adapter = new Adapter_Table(options,this);
         recyclerView.setAdapter(adapter);
     }
     @Override
