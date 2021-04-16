@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.1"
     defaultConfig {
         applicationId "com.teamsevi.sevi"
-        minSdkVersion 16
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -47,4 +47,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.razorpay:checkout:1.6.4'
 }
