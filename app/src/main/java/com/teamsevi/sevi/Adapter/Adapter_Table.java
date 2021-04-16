@@ -23,6 +23,7 @@ public class Adapter_Table extends FirebaseRecyclerAdapter<Model_Table,Adapter_T
     @Override
     protected void onBindViewHolder(@NonNull holder holder, int position, @NonNull Model_Table model) {
     holder.textView.setText(model.getNumer());
+
     }
 
     @NonNull

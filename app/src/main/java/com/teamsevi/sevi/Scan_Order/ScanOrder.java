@@ -13,6 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.teamsevi.sevi.Hotel_Menu.Hotel1;
+import com.teamsevi.sevi.Table;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,7 +71,7 @@ public class ScanOrder extends AppCompatActivity implements ZBarScannerView.Resu
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("hotelid", hotelid);
                         editor.commit();
-                        startActivity(new Intent(getApplicationContext(), Hotel1.class));
+                        startActivity(new Intent(getApplicationContext(), Table.class));
                 }
                 else {
                     Toast.makeText(ScanOrder.this, "Wrong QR code!", Toast.LENGTH_SHORT).show();
