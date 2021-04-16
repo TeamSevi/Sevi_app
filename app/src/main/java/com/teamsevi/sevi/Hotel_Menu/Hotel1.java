@@ -1,5 +1,6 @@
 package com.teamsevi.sevi.Hotel_Menu;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.teamsevi.sevi.Adapter.Adapter_category;
 import com.teamsevi.sevi.Adapter.Adapter_menu;
@@ -30,6 +32,8 @@ import org.json.JSONObject;
 
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
+
+import java.util.Random;
 
 import static com.teamsevi.sevi.Adapter.Adapter_category.pref;
 import static com.teamsevi.sevi.Adapter.Adapter_category.pref1;
@@ -158,6 +162,38 @@ elegantNumberButton.setOnClickListener(new ElegantNumberButton.OnClickListener()
         builder.setMessage(s);
 
         builder.show();
+        SharedPreferences shared = getSharedPreferences("HotelSession", MODE_PRIVATE);
+        String hotelid = shared.getString("hotelid", "");
+
+        /*byte[] array = new byte[7]; // length is bounded by 7
+        new Random().nextBytes(array);
+        String uid = new String(array, Charset.forName("UTF-8"));*/
+
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 8)
+        { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+
+
+
+        FirebaseDatabase rootnode = FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootnode.getReference("Hotel");
+        String name="crv";
+        float price = (float) 89.90;
+        int qty = 1;
+
+        //UserHelperClass addNewUser = new UserHelperClass(firstname);
+        Order add = new Order(name,price,qty);
+
+        reference.child(hotelid).child("orders").child(saltStr).setValue(add);
+
+        Intent intent = new Intent(getApplicationContext(), HomePage.class);
+        startActivity(intent);
     }
 
     @Override

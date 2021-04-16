@@ -5,8 +5,11 @@ import android.content.SharedPreferences;
 
 import java.util.HashMap;
 
+import static com.teamsevi.sevi.Adapter.Adapter_category.pref;
+
 public class SessionManager {
 
+    private static final String KEY_TOTAL = "t";
     SharedPreferences usersSession;
     SharedPreferences.Editor editor;
     android.content.Context context;
@@ -24,7 +27,10 @@ public class SessionManager {
         usersSession = _context.getSharedPreferences("userLoginSession", Context.MODE_PRIVATE);
         editor = usersSession.edit();
     }
-
+    public void grandtotal (String total){
+        editor.putString(KEY_TOTAL,total);
+        editor.commit();
+    }
     public void createLoginSession(String firstname,String lastname,String phoneno,String email,String password){
         editor.putBoolean(IS_LOGIN,true);
 

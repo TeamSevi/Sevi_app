@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
 android:id="@+id/c"
     tools:context=".Hotel_Menu.Hotel1">
+
     <RelativeLayout
+        android:id="@+id/r"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:id="@+id/r"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+       >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rev"
-            android:layout_width="373dp"
-            android:layout_height="602dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentBottom="@+id/c"
@@ -41,8 +41,20 @@ android:id="@+id/c"
                 android:layout_margin="8dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total: "
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
 
-
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$10,000"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <Button

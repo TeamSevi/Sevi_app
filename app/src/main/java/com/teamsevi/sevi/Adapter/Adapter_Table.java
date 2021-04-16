@@ -67,7 +67,7 @@ public class Adapter_Table extends FirebaseRecyclerAdapter<Model_Table,Adapter_T
                 @Override
                 public void onClick(View v) {
                     DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
-                    mDatabase.child("Hotel").child(hotelid).child("tables").child(name).child("status").setValue("running");
+                    mDatabase.child("Hotel").child(hotelid).child("tables").child(name).child("status").setValue("active");
                     Intent i = new Intent(context,Hotel1.class);
                     context.startActivity(i);
                 }
