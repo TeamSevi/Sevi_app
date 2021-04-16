@@ -122,6 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tab for Order"
+            android:id="@+id/i"
             android:background="@color/colorPrimary"
             android:textColor="@color/white" />
 

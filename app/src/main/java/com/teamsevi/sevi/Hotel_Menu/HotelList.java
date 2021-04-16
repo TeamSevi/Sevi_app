@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,12 +24,12 @@ import com.teamsevi.sevi.R;
 
 public class HotelList extends AppCompatActivity {
     TextView name,address,city;
-
+Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_list);
-
+        button = findViewById(R.id.i);
         name = findViewById(R.id.hotelname);
         address = findViewById(R.id.hoteladdress);
         city = findViewById(R.id.hotelcity);
@@ -42,6 +43,13 @@ public class HotelList extends AppCompatActivity {
 
         String hotelcity = shared.getString("hotelcity","");
         city.setText(hotelcity);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Hotel1.class);
+                startActivity(i);
+            }
+        });
     }
 
 
