@@ -51,22 +51,55 @@
             android:src="@drawable/veg"
             android:layout_alignParentRight="true" />
 
-       <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-           android:layout_width="80dp"
-           android:id="@+id/d"
-           android:layout_alignParentRight="true"
-           android:layout_marginTop="10dp"
-           android:layout_below="@id/i1"
-           android:layout_height="30dp"
-           android:gravity="center"
-           app:initialNumber="0"
-           app:finalNumber="100"
-           app:textSize="10sp"
-           app:textColor="@color/black"
-           app:backGroundColor="@color/colorPrimary">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:orientation="horizontal">
 
-       </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quantity" />
+
+            <TextView
+                android:id="@+id/integer_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="16dp"
+                android:text="1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="total" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="16dp"
+                android:text="85"
+                android:textStyle="bold"
+                android:textSize="40sp" />
+
+
+
+        </LinearLayout>
+
     </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>
+

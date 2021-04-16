@@ -25,7 +25,6 @@ int i;
     public Adapter_category(@NonNull FirebaseRecyclerOptions<Model_category> options1, Context context) {
         super(options1);
         this.context = context;
-
     }
 
     public Adapter_category(@NonNull FirebaseRecyclerOptions<Model_category> options1) {
@@ -40,16 +39,15 @@ int i;
         holder1.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = position;
+
 
                 notifyDataSetChanged();
-
+                i = position;
             }
         });
 
        if(i == position){
             holder1.linearLayout.setBackgroundResource(R.drawable.select);
-
         }
         else {
             holder1.linearLayout.setBackgroundResource(R.drawable.bg);
@@ -74,9 +72,9 @@ int i;
             t =(TextView)itemView.findViewById(R.id.textView5);
             linearLayout = itemView.findViewById(R.id.l);
 
-            SharedPreferences sharedpreferences = context.getSharedPreferences(pref, Context.MODE_PRIVATE);
+            SharedPreferences sharedpreferences = context.getSharedPreferences("CategorySession", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            editor.putString(pref1, category);
+            editor.putString("itemcategory", category);
             editor.apply();
 
         }
