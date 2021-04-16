@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     tools:context=".Home.HomePage">
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -16,7 +17,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/home_menu_header"
         app:menu="@menu/main_menu">
-
     </com.google.android.material.navigation.NavigationView>
 
 <!--    <LinearLayout-->
@@ -96,10 +96,24 @@
 
 <!--    </LinearLayout>-->
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_above="@+id/rlMain">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/rlMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -123,105 +137,97 @@
                 android:contentInsetLeft="0dp"
                 app:contentInsetLeft="0dp">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:weightSum="5">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
 
 
-<!--                                <ImageButton-->
-<!--                                    android:id="@+id/btnMenu"-->
-<!--                                    android:layout_width="0dp"-->
-<!--                                    android:layout_height="match_parent"-->
-<!--                                    android:layout_weight="1"-->
-<!--                                    android:src="@drawable/ic_menu_icon"-->
-<!--                                    android:tint="@color/colorPrimary"-->
-<!--                                    android:background="?android:attr/selectableItemBackground"/>-->
-
-                                <ImageButton
-                                    android:id="@+id/btnBerita"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/ic_notification"
-                                    android:tint="@color/colorPrimary"
-                                    android:background="?android:attr/selectableItemBackground"/>
-
-                                <LinearLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"/>
-
-
-                                <ImageButton
-                                    android:id="@+id/btnFavorite"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/ic_feedback"
-                                    android:tint="@color/colorPrimary"
-                                    android:background="?android:attr/selectableItemBackground"/>
-
-                                <ImageButton
-                                    android:id="@+id/btnMap"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/ic_map_marker"
-                                    android:tint="@color/colorPrimary"
-                                    android:background="?android:attr/selectableItemBackground"/>
-
-                            </LinearLayout>
-
-                        </androidx.appcompat.widget.Toolbar>
-
-                    </com.google.android.material.appbar.AppBarLayout>
-
-
-
-                    <FrameLayout
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:elevation="30dp"
-                        android:translationZ="30dp">
-                        <androidx.coordinatorlayout.widget.CoordinatorLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/scan_btn"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:clickable="true"
-                            android:scaleType="center"
-                            app:backgroundTint="?attr/colorPrimary"
-                            app:borderWidth="0dp"
-                            app:elevation="10dp"
-                            app:fabSize="normal"
-                            app:srcCompat="@drawable/ic_qrcode"
-                            android:layout_gravity="center"
-                            tools:ignore="VectorDrawableCompat" />
-                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                        <com.skyfishjy.library.RippleBackground
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:layout_width="match_parent"
+                        <ImageButton
+                            android:id="@+id/btnBerita"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:id="@+id/rippleBackground"
-                            app:rb_color="@color/colorPrimary"
-                            app:rb_radius="22dp"
-                            app:rb_rippleAmount="3"
-                            app:rb_duration="3000"
-                            app:rb_scale="3"
-                            android:layout_gravity="center"
-                            android:gravity="center">
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_notification"
+                            android:tint="@color/colorPrimary"
+                            android:background="?android:attr/selectableItemBackground"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"/>
+
+
+                        <ImageButton
+                            android:id="@+id/btnFavorite"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_feedback"
+                            android:tint="@color/colorPrimary"
+                            android:background="?android:attr/selectableItemBackground"/>
+
+                        <ImageButton
+                            android:id="@+id/btnMap"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_map_marker"
+                            android:tint="@color/colorPrimary"
+                            android:background="?android:attr/selectableItemBackground"/>
+
+                    </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
 
 
-                        </com.skyfishjy.library.RippleBackground>
-                    </FrameLayout>
-                </RelativeLayout>
-            </androidx.drawerlayout.widget.DrawerLayout>
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:elevation="30dp"
+            android:translationZ="30dp">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/scan_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:scaleType="center"
+                    app:backgroundTint="?attr/colorPrimary"
+                    app:borderWidth="0dp"
+                    app:elevation="10dp"
+                    app:fabSize="normal"
+                    app:srcCompat="@drawable/ic_qrcode"
+                    android:layout_gravity="center"
+                    tools:ignore="VectorDrawableCompat" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <com.skyfishjy.library.RippleBackground
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rippleBackground"
+                app:rb_color="@color/colorPrimary"
+                app:rb_radius="22dp"
+                app:rb_rippleAmount="3"
+                app:rb_duration="3000"
+                app:rb_scale="3"
+                android:layout_gravity="center"
+                android:gravity="center">
+            </com.skyfishjy.library.RippleBackground>
+
+        </FrameLayout>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -210,38 +210,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/email"
-            android:textSize="15sp"
-            android:layout_marginTop="20dp"/>
+            android:textSize="18sp"
+            android:layout_marginTop="25dp"/>
 
         <TextView
             android:id="@+id/E_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/email"
-            android:textSize="23sp"
+            android:textSize="18sp"
             android:layout_marginTop="7dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/phone"
-            android:textSize="15sp"
-            android:layout_marginTop="20dp"/>
+            android:textSize="18sp"
+            android:layout_marginTop="25dp"/>
 
         <TextView
             android:id="@+id/E_mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/phone"
-            android:textSize="23sp"
+            android:textSize="18sp"
             android:layout_marginTop="7dp"/>
         <Button
             android:id="@+id/btnUpload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="save"
-            android:layout_gravity="center">
-        </Button>
+            android:text="SAVE"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

@@ -1,4 +1,4 @@
- package com.teamsevi.sevi.Home;
+package com.teamsevi.sevi.Home;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,59 +11,87 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.skyfishjy.library.RippleBackground;
+import com.teamsevi.sevi.Adapter.Adapter_Hotel;
 import com.teamsevi.sevi.Database.SessionManager;
 import com.teamsevi.sevi.Hotel_Menu.Hotel1;
 import com.teamsevi.sevi.Login_Signup.LoginScreen;
+import com.teamsevi.sevi.MapsActivity;
+import com.teamsevi.sevi.Model.Model_Hotel;
 import com.teamsevi.sevi.R;
 import com.teamsevi.sevi.Scan_Order.ScanOrder;
 import com.teamsevi.sevi.SplashScreen;
 import com.teamsevi.sevi.Table;
+
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
  public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
          private int PERMISSION_ALL = 1;
-         private String[] PERMISSIONS = {
-                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                 Manifest.permission.READ_EXTERNAL_STORAGE,
-                 Manifest.permission.CAMERA
-         };
-    DrawerLayout drawerlayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
-    FloatingActionButton scnbtn;
-    TextView name;
-    CircleImageView image;
-//    TextView username;
+         private String[] PERMISSIONS = {   Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                                            Manifest.permission.CAMERA  };
+
+         RecyclerView recyclerView;
+         Adapter_Hotel adapter;
+         DatabaseReference mbase;
+
+         DrawerLayout drawerlayout;
+         NavigationView navigationView;
+         Toolbar toolbar;
+         FloatingActionButton scnbtn;
+         TextView name;
+         CircleImageView image;
+         ImageButton mapbutton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
+
+
+        mbase = (DatabaseReference) FirebaseDatabase.getInstance().getReference().child("Hotel");
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        FirebaseRecyclerOptions<Model_Hotel> options = new FirebaseRecyclerOptions.Builder<Model_Hotel>().setQuery(mbase, Model_Hotel.class).build();
+        adapter = new Adapter_Hotel(options,this);
+        recyclerView.setAdapter(adapter);
+
+
         drawerlayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         scnbtn=findViewById(R.id.scan_btn);
+        mapbutton = findViewById(R.id.btnMap);
+
         if(!hasPermissions(this, PERMISSIONS)){
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }
@@ -96,6 +124,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
             }
         });
 
+        mapbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         String phone = (String) usersDetails.get(SessionManager.KEY_PHONENO);
         Query checkUser = FirebaseDatabase.getInstance().getReference("App/users").orderByChild("phoneno").equalTo(phone);
@@ -115,6 +151,20 @@ import de.hdodenhof.circleimageview.CircleImageView;
         });
 
     }
+
+     @Override protected void onStart()
+     {
+         super.onStart();
+         adapter.startListening();
+     }
+
+     @Override protected void onStop()
+     {
+         super.onStop();
+         adapter.stopListening();
+     }
+
+
      public static boolean hasPermissions(Context context, String... permissions) {
          if (context != null && permissions != null) {
              for (String permission : permissions) {
@@ -125,7 +175,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
          }
          return true;
      }
-     public  void onBackPressed() {
+     public void onBackPressed() {
 
         if(drawerlayout.isDrawerOpen(GravityCompat.START)){
             drawerlayout.closeDrawer(GravityCompat.START);
