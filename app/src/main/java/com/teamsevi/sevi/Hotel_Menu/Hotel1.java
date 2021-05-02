@@ -10,13 +10,15 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.teamsevi.sevi.Database.SessionManager;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.common.internal.Constants;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.teamsevi.sevi.Adapter.Adapter_category;
 import com.teamsevi.sevi.Adapter.Adapter_menu;
+import com.teamsevi.sevi.Database.SessionManager;
 import com.teamsevi.sevi.Home.HomePage;
 import com.teamsevi.sevi.Model.Model_category;
 import com.teamsevi.sevi.Model.Model_menu;
@@ -33,6 +35,7 @@ import org.json.JSONObject;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
+import java.util.HashMap;
 import java.util.Random;
 
 import static com.teamsevi.sevi.Adapter.Adapter_category.pref;
@@ -45,6 +48,8 @@ public class Hotel1 extends AppCompatActivity implements PaymentResultListener {
     ElegantNumberButton elegantNumberButton;
     TextView textView;
     String e;
+
+    private SessionManager sessionManager;
     //Adapter_category adapter1;
    
 
@@ -165,6 +170,12 @@ elegantNumberButton.setOnClickListener(new ElegantNumberButton.OnClickListener()
         SharedPreferences shared = getSharedPreferences("HotelSession", MODE_PRIVATE);
         String hotelid = shared.getString("hotelid", "");
 
+        SharedPreferences shared1 = getSharedPreferences("QuantitySession", MODE_PRIVATE);
+        String Quantity = shared1.getString("Quantity", "");
+
+String total = null;
+        HashMap<String,String> tot = sessionManager.getgrandtotal(total);
+         float t = Float.parseFloat(tot.get(SessionManager.KEY_TOTAL));
         /*byte[] array = new byte[7]; // length is bounded by 7
         new Random().nextBytes(array);
         String uid = new String(array, Charset.forName("UTF-8"));*/
@@ -179,13 +190,15 @@ elegantNumberButton.setOnClickListener(new ElegantNumberButton.OnClickListener()
         }
         String saltStr = salt.toString();
 
-
+        SessionManager sessionManager = new SessionManager(this);
+        HashMap usersDetails = sessionManager.getUserDetailFromSession();
+        String firstname = (String) usersDetails.get(SessionManager.KEY_FIRSTNAME);
 
         FirebaseDatabase rootnode = FirebaseDatabase.getInstance();
         DatabaseReference reference = rootnode.getReference("Hotel");
-        String name="crv";
-        float price = (float) 89.90;
-        int qty = 1;
+        String name=firstname;
+        float price = t;
+        int qty = Integer.parseInt(Quantity);
 
         //UserHelperClass addNewUser = new UserHelperClass(firstname);
         Order add = new Order(name,price,qty);

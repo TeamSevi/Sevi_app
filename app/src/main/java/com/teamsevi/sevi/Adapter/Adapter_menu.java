@@ -71,6 +71,10 @@ public class Adapter_menu extends FirebaseRecyclerAdapter<Model_menu, Adapter_me
         textView =(TextView)itemView.findViewById(R.id.t1);
         textView1 =(TextView)itemView.findViewById(R.id.t2);
         textView2 =(TextView)itemView.findViewById(R.id.t3);
+        SharedPreferences sharedpreferences = context.getSharedPreferences("QuantitySession", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("Quantity", String.valueOf(Quantity));
+        editor.apply();
 
     }
 }
