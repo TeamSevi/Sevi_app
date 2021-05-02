@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -16,15 +17,21 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.teamsevi.sevi.Database.SessionManager;
+import com.teamsevi.sevi.Home.HomePage;
 import com.teamsevi.sevi.Hotel_Menu.Hotel1;
+import com.teamsevi.sevi.Login_Signup.LoginScreen;
 import com.teamsevi.sevi.Model.Model_Table;
 import com.teamsevi.sevi.R;
+import com.teamsevi.sevi.Table;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.google.firebase.database.FirebaseDatabase.*;
 
 public class Adapter_Table extends FirebaseRecyclerAdapter<Model_Table,Adapter_Table.holder> {
     private Context context;
@@ -35,7 +42,7 @@ public class Adapter_Table extends FirebaseRecyclerAdapter<Model_Table,Adapter_T
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull holder holder, int position, @NonNull Model_Table model) {
+    protected void onBindViewHolder(@NonNull holder holder, int position , @NonNull Model_Table model) {
     holder.textView.setText(model.getName());
         table = holder.textView.getText().toString();
     }
@@ -66,10 +73,37 @@ public class Adapter_Table extends FirebaseRecyclerAdapter<Model_Table,Adapter_T
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
-                    mDatabase.child("Hotel").child(hotelid).child("tables").child(name).child("status").setValue("active");
-                    Intent i = new Intent(context,Hotel1.class);
-                    context.startActivity(i);
+                    Query checkUser = getInstance().getReference("Hotel").child(hotelid).child("tables").child(name).child("status");
+                    checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.exists()){
+
+
+                                String s = dataSnapshot.getValue(String.class);
+                                if(s.equals("free")){
+                                    DatabaseReference mDatabase = getInstance().getReference();
+                                    mDatabase.child("Hotel").child(hotelid).child("tables").child(name).child("status").setValue("active");
+                                    Intent i = new Intent(context, Hotel1.class);
+                                    context.startActivity(i);
+
+                                }
+                                else {
+                                    Toast.makeText(context, "Table not available", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(context, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+                   // String s = String.valueOf(getInstance().getReference("Hotel").child(hotelid).child("tables").child(name).child("status"));
+
+
+
                 }
             });
         }
